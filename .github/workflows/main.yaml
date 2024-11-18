@@ -5,9 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to publish something
     steps:
+      - name: Checkout the repo (required to find the action implementation)
+        uses: actions/checkout@v4
+
       - name: Publish action step
-        id: publish
-        uses: ./../../publish-action
+        uses: ./publish-action
         with:
           stage: 'DEV'
           caller_run_id: ${{ github.run_id }}
