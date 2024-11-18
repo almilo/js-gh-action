@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Publish action step
         id: publish
-        uses: ./publish-action
+        uses: /publish-action
         with:
           stage: 'DEV'
           caller_run_id: ${{ github.run_id }}
