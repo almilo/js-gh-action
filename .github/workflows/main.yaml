@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  publish_job:
+    runs-on: ubuntu-latest
+    name: A job to publish something
+    steps:
+      - name: Publish action step
+        id: publish
+        uses: ./publish-action
+        with:
+          stage: 'DEV'
+          caller_run_id: ${{ github.run_id }}

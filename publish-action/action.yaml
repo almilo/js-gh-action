@@ -1,0 +1,12 @@
+name: 'Publish action'
+description: 'Publish a test report in Confluence for a given deployment'
+inputs:
+  stage:
+    description: 'The stage where the deployment has happened'
+    required: true
+  caller_run_id:
+    description: 'The id of the GitHub Actions run invoking the action for traceability'
+    required: true
+runs:
+  using: 'node20'
+  main: 'index.js'
